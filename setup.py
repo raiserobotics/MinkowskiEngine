@@ -40,6 +40,7 @@ Additional arguments:
   --blas_library_dirs=<comma_separated_values> : additional library dirs. Only
       activated when --blas=<value> is set.
 """
+
 import sys
 
 if sys.version_info < (3, 6):
@@ -120,7 +121,7 @@ def _argparse(pattern, argv, is_flag=True, is_list=False):
 
 
 run_command("rm", "-rf", "build")
-run_command("pip", "uninstall", "MinkowskiEngine", "-y")
+run_command("uv", "pip", "uninstall", "MinkowskiEngine", "-y")
 
 # For cpu only build
 CPU_ONLY, argv = _argparse("--cpu_only", argv)
